@@ -17,7 +17,7 @@ public class CatalogoLeitor {
         invalidos = new ArrayList<>();
     }
     
-     public void adicionarFuncionario(Leitor leitor){
+     public void adicionarLeitor(Leitor leitor){
         validos.add(leitor);
     }
     

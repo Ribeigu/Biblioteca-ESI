@@ -10,4 +10,17 @@ package Application;
  */
 public class Gerente extends Funcionario{
     
+    public Gerente(){
+        
+    }
+
+    public Gerente(String nome, String CPF, String email, String endereco, int dataDeNascimento, String telefone) {
+        super(nome, CPF, email, endereco, dataDeNascimento, telefone);
+    }
+    
+    public boolean cadastrarFuncionario(String nome, String CPF, String email, String endereco, int dataDeNascimento, String telefone){
+        //ajeitar essa
+    }
+    
+    
 }

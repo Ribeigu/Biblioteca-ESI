@@ -18,7 +18,7 @@ public class CatalogoFuncionario {
         invalidos = new ArrayList<>();
     }
     
-    public void addFuncionario(Funcionario funcionario){
+    public void adicionarFuncionario(Funcionario funcionario){
         validos.add(funcionario);
     }
     
