@@ -13,6 +13,7 @@ public class Usuario {
     private String CPF;
     private String email;
     private String endereco;
+    private String senha;
     private int dataDeNascimento;
     private String telefone;
     private EnumTipo status;
@@ -86,7 +87,19 @@ public class Usuario {
     public void setStatus(EnumTipo status) {
         this.status = status;
     }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
     
+    
+    public boolean login(String email, String senha){
+        return true;
+    }
     
     
 }

@@ -49,4 +49,12 @@ public class Leitor extends Usuario{
         this.reservas = reservas;
     }
     
+    @Override
+    public boolean login(String email, String senha){
+        Leitor leitor = catalogoLeitor.buscaEmail(email);
+        if(leitor==null) return false;
+        String senhaLeitor = leitor.getSenha();
+        if(senha!=senhaLeitor) return false;
+        return true;
+    }
 }

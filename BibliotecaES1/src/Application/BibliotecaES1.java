@@ -8,7 +8,7 @@ package Application;
  *
  * @author Júlia
  */
-public class BibliotecaController {
+public class BibliotecaES1 {
 
     /**
      * @param args the command line arguments

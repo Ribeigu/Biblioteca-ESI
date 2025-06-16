@@ -22,4 +22,12 @@ public class Funcionario extends Usuario{
         
         
     }
-}
+    @Override
+    public boolean login(String email, String senha){
+        Funcionario funcionario = catalogoFuncionario.buscaEmail(email);
+        if(funcionario==null) return false;
+        String senhaFuncionario = funcionario.getSenha();
+        if(senha!=senhaFuncionario) return false;
+        return true;
+    }
+} 
