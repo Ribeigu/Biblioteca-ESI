@@ -12,6 +12,14 @@ import java.util.ArrayList;
  */
 public class CatalogoLivros {
     private ArrayList<CatalogoExemplar> livros;
+    private CatalogoLivros() {}
+    private static CatalogoLivros instancia;
+    
+    public static CatalogoLivros getInstancia(){
+        if(instancia==null) instancia = new CatalogoLivros();
+        return instancia;
+    }
+    
     
     public int tamanhoCatalogo(){
         return livros.size();

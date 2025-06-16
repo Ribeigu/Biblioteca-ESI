@@ -12,6 +12,14 @@ import java.util.ArrayList;
  */
 public class CatalogoReserva {
     private ArrayList<Reserva> reservas;
+    private CatalogoReserva() {}
+    private static CatalogoReserva instancia;
+    
+    public static CatalogoReserva getInstancia(){
+        if(instancia==null) instancia = new CatalogoReserva();
+        return instancia;
+    }
+    
     
     public Reserva busca(int posicao){
         return reservas.get(posicao);

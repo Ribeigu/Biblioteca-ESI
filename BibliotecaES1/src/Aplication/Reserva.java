@@ -48,6 +48,7 @@ public class Reserva {
     
     public void criarReserva(Leitor leitor, Livro livro ){
         Reserva reserva = new Reserva(leitor, livro);
-        CatalogoReserva.adicionarReserva(reserva);  
+        CatalogoReserva aux = CatalogoReserva.getInstancia();
+        aux.adicionarReserva(reserva);  
     }
 }

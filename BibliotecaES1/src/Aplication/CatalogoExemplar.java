@@ -10,6 +10,14 @@ import java.util.ArrayList;
  */
 public class CatalogoExemplar {
     private ArrayList<Livro>  exemplares;
+    private CatalogoExemplar() {}
+    private static CatalogoExemplar instancia;
+    
+    public static CatalogoExemplar getInstancia(){
+        if(instancia==null) instancia = new CatalogoExemplar();
+        return instancia;
+    }
+    
     
     public void adicionarExemplar(Livro livro){
         exemplares.add(livro);
