@@ -30,4 +30,4 @@ public class Funcionario extends Usuario{
         if(senha!=senhaFuncionario) return false;
         return true;
     }
-} 
+} l

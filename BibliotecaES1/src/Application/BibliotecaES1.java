@@ -15,6 +15,7 @@ public class BibliotecaES1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Usuario usuario = Leitor.login();
     }
     
 }
