@@ -4,7 +4,7 @@
  */
 package Application;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 /**
  *
  * @author Júlia
@@ -13,21 +13,57 @@ public class Emprestimo {
     private Livro livro;
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
+    private LocalDate dataAtual;
     private Leitor leitor;
-    private boolean multa;
+    private float multa;
 
     public Emprestimo(){
         
     }
     
-    public Emprestimo(Livro livro, LocalDate dataEmprestimo, LocalDate dataDevolucao, Leitor leitor, boolean multa) {
+    public Emprestimo(Livro livro, Leitor leitor, float multa) {
         this.livro = livro;
-        this.dataEmprestimo = dataEmprestimo;
-        this.dataDevolucao = dataDevolucao;
+        this.dataEmprestimo = LocalDate.now();
+        this.dataDevolucao = dataEmprestimo.plusDays(10);
         this.leitor = leitor;
         this.multa = multa;
     }
-
+    
+    //é a Biblioteca que coloca um empréstimo no catálogo
+    
+    public boolean atualizaEmprestimo(){
+        boolean bool = verificaMulta();
+        if(bool == true){
+            return false;
+        }
+        dataAtual = LocalDate.now();
+        dataDevolucao = dataAtual.plusDays(10);
+        return true;
+    }
+    
+    public boolean verificaMulta(){
+        dataAtual = LocalDate.now();
+        if(dataAtual.isAfter(dataDevolucao)){
+            return true;
+        }
+        return false;
+    }
+    
+    public float calculaMulta(){
+        dataAtual = LocalDate.now();
+        float dias = ChronoUnit.DAYS.between(dataDevolucao, dataAtual);
+        if(dias > 60){  
+           multa = 60*5;   //valor máximo que a multa pode assumir
+        }else{
+            multa = dias*5;
+        }
+        return multa;
+    }
+    
+    public float getMulta() {
+        return multa;
+    }
+    
     public Livro getLivro() {
         return livro;
     }
@@ -58,32 +94,5 @@ public class Emprestimo {
 
     public void setLeitor(Leitor leitor) {
         this.leitor = leitor;
-    }
-
-    public boolean isMulta() {
-        return multa;
-    }
-
-    public void setMulta(boolean multa) {
-        this.multa = multa;
-    }
-    
-    //adicionar emprestimo no catálogo
-    public void criarEmprestimo(int tombo, String CPF){
-        
-    }
-    
-    public void atualizarEmprestimo(int tombo){
-        
-    }
-    
-    public void fazerDevolucao(int tombo){
-        
-    }
-    
-    public void calcularMulta(int tombo){
-        
-    }
-    
-    
+    }    
 }
