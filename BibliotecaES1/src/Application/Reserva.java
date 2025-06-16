@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Aplication;
+package Application;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -47,7 +47,7 @@ public class Reserva {
     }
     
     public void criarReserva(Leitor leitor, Livro livro ){
-        Reserva reserva = new Reserva(leitor, livro);
+        Reserva reserva = new Reserva(livro, leitor);
         CatalogoReserva aux = CatalogoReserva.getInstancia();
         aux.adicionarReserva(reserva);  
     }
