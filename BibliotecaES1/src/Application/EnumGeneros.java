@@ -6,8 +6,8 @@ package Application;
 
 /**
  *
- * @author Júlia
+ * @author gusta
  */
-public enum EnumTipo {
-    FUNCIONARIO, GERENTE;
+public enum EnumGeneros{
+    COMEDIA, DRAMA, FANTASIA, THRILLER, TERROR, ROMANCE, POLICIAL, DISTOPIA, ACAO, AVENTURA, BIBLIOGRAFIA, AUTOAJUDA, TRUECRIME, DIDATICO; 
 }

@@ -14,12 +14,21 @@ import java.time.format.DateTimeFormatter;
 public class Reserva {
     private Livro livro;
     private LocalDate dataExpiracao;
-    private Leitor leitor;
+    private String CPF;
 
-    public Reserva(Livro livro, Leitor leitor) {
+    public Reserva(){
+        
+    }
+
+    public Reserva(Livro livro, String CPF) {
         this.livro = livro;
-        this.dataExpiracao = LocalDate.now();
-        this.leitor = leitor;
+        this.CPF = CPF;
+        this.dataExpiracao = LocalDate.now().plusDays(3);
+    }
+    
+    public boolean VerificarValidade(){
+        LocalDate diaAtual = LocalDate.now();
+        return !diaAtual.isAfter(dataExpiracao);
     }
 
     public Livro getLivro() {
@@ -30,25 +39,17 @@ public class Reserva {
         this.livro = livro;
     }
 
-    public String getDataExpiracao() {
-        return dataExpiracao.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    public String getCPF() {
+        return CPF;
     }
 
-    public void setDataExpiracao(LocalDate dataExpiracao) {
-        this.dataExpiracao = dataExpiracao;
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
     }
 
-    public Leitor getLeitor() {
-        return leitor;
-    }
-
-    public void setLeitor(Leitor leitor) {
-        this.leitor = leitor;
+    public LocalDate getDataExpiracao() {
+        return dataExpiracao;
     }
     
-    public void criarReserva(Leitor leitor, Livro livro ){
-        Reserva reserva = new Reserva(livro, leitor);
-        CatalogoReserva aux = CatalogoReserva.getInstancia();
-        aux.adicionarReserva(reserva);  
-    }
+    
 }

@@ -12,35 +12,64 @@ public class CatalogoLeitor {
     private ArrayList<Leitor> validos;
     private ArrayList<Leitor> invalidos;
     
-    public CatalogoLeitor(){
+    private CatalogoLeitor() {
         validos = new ArrayList<>();
         invalidos = new ArrayList<>();
     }
+    private static CatalogoLeitor instancia;
     
-     public void adicionarLeitor(Leitor leitor){
+    public static CatalogoLeitor getInstancia(){
+        if(instancia==null) instancia = new CatalogoLeitor();
+        return instancia;
+    }
+    
+     public void AdicionarLeitor(Leitor leitor){
         validos.add(leitor);
     }
     
-    public void tornarInvalido(Leitor leitor){
+    public void AdicionarLeitorInvalido(Leitor leitor){
         validos.remove(leitor);
         invalidos.add(leitor);
     }
     
-    public boolean buscarLeitorValido(String CPF){
-        for(int i=0; i<validos.size(); i++){
-            if(validos.get(i).getCPF().equals(CPF)){
-                return true;
+    public Leitor BuscarLeitor(String CPF){
+        for(Leitor l : validos){
+            if(l.getCPF().equals(CPF)){
+                return l;
             }
         }
-        return false;
+        return null;
     }
     
-    public boolean buscarLeitorInvalido(String CPF){
-        for(int i=0; i<invalidos.size(); i++){
-            if(invalidos.get(i).getCPF().equals(CPF)){
-                return true;
+    public Leitor BuscarLeitorInvalido(String CPF){
+        for(Leitor l : invalidos){
+            if(l.getCPF().equals(CPF)){
+                return l;
             }
         }
-        return false;
+        return null;
     }
+    
+    public boolean VerificarAutenticidade(String email){
+        for(Leitor l : invalidos){
+            if(l.getEmail().equals(email)){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public boolean VerificarPermissao(Leitor leitor){
+        return leitor.VerificarMulta();
+    }
+
+    public ArrayList<Leitor> getValidos() {
+        return validos;
+    }
+
+    public ArrayList<Leitor> getInvalidos() {
+        return invalidos;
+    }
+    
+    
 }

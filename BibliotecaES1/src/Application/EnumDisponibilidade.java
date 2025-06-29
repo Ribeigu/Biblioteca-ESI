@@ -6,8 +6,8 @@ package Application;
 
 /**
  *
- * @author Júlia
+ * @author gusta
  */
-public enum EnumTipo {
-    FUNCIONARIO, GERENTE;
+public enum EnumDisponibilidade {
+    DISPONIVEL, EMPRESTADO, ATRASADO, RESERVADO;
 }

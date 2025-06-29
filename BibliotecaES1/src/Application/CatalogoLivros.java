@@ -20,22 +20,44 @@ public class CatalogoLivros {
         return instancia;
     }
     
+    public void AdicionarExemplar(Livro livro){
+        int ISBN = livro.getISBN();
+        for(CatalogoExemplar e : livros){
+            if(e.getISBN() == ISBN){
+                e.AdicionarExemplar(livro);
+            }
+        }
+    }
     
     public int tamanhoCatalogo(){
         return livros.size();
     }
     
-    public CatalogoExemplar buscaExemplares(int posicao){
-        return livros.get(posicao);
+    public int VerificarQuantidade(int ISBN){
+        for(CatalogoExemplar e : livros){
+            if(e.getISBN() == ISBN){
+                return e.TamanhoCatalogo();
+            }
+        }
+        return 0;
     }
     
-    public Livro buscarISBN(int ISBN){
-        for(int i=0; i<tamanhoCatalogo(); i++){
-            CatalogoExemplar exemplares = buscaExemplares(i);
-            Livro livro=exemplares.buscaISBN(ISBN);
-            if (livro!=null) return livro;
+    public boolean VerificarDisponibilidade(int ISBN){
+        for(CatalogoExemplar e : livros){
+            if(e.getISBN() == ISBN){
+                return e.VerificarDisponibilidade();
+            }
         }
-        return null;
+        return false;
+    }
+    
+    public boolean BuscarCatalogoExemplar(int ISBN){
+        for(CatalogoExemplar e : livros){
+            if(e.getISBN() == ISBN){
+                return true;
+            }
+        }
+        return false;
     }
     
 }

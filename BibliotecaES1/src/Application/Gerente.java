@@ -14,13 +14,10 @@ public class Gerente extends Funcionario{
         
     }
 
-    public Gerente(String nome, String CPF, String email, String endereco, int dataDeNascimento, String telefone) {
-        super(nome, CPF, email, endereco, dataDeNascimento, telefone);
+    public Gerente(String nome, String senha, String CPF, String email, String endereco, int dataDeNascimento, String telefone) {
+        super(nome, senha, CPF, email, endereco, dataDeNascimento, telefone);
+        status = EnumTipo.GERENTE; 
     }
-    
-    public boolean cadastrarFuncionario(String nome, String CPF, String email, String endereco, int dataDeNascimento, String telefone){
-        //ajeitar essa
-    }
-    
+   
     
 }

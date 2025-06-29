@@ -13,35 +13,59 @@ public class CatalogoFuncionario {
     private ArrayList<Funcionario> validos;
     private ArrayList<Funcionario> invalidos;
     
-    public CatalogoFuncionario(){
+    private CatalogoFuncionario() {
         validos = new ArrayList<>();
         invalidos = new ArrayList<>();
     }
+    private static CatalogoFuncionario instancia;
     
-    public void adicionarFuncionario(Funcionario funcionario){
+    public static CatalogoFuncionario getInstancia(){
+        if(instancia==null) instancia = new CatalogoFuncionario();
+        return instancia;
+    }
+    
+    public void AdicionarFuncionario(Funcionario funcionario){
         validos.add(funcionario);
     }
     
-    public void tornarInvalido(Funcionario funcionario){
+    public void AdicionarFuncionarioInvalido(Funcionario funcionario){
         validos.remove(funcionario);
         invalidos.add(funcionario);
     }
     
-    public boolean buscarFucnionarioValido(String CPF){
-        for(int i=0; i<validos.size(); i++){
-            if(validos.get(i).getCPF().equals(CPF)){
-                return true;
+    public Funcionario BuscarFucnionario(String CPF){
+        for(Funcionario f : validos){
+            if(f.getCPF().equals(CPF)){
+                return f;
             }
         }
-        return false;
+        return null;
     }
     
-    public boolean buscarFuncionarioInvalido(String CPF){
-        for(int i=0; i<invalidos.size(); i++){
-            if(invalidos.get(i).getCPF().equals(CPF)){
-                return true;
+    public Funcionario BuscarFuncionarioInvalido(String CPF){
+        for(Funcionario f : invalidos){
+            if(f.getCPF().equals(CPF)){
+                return f;
             }
         }
-        return false;
+        return null;
     }
+    
+    public boolean VerificarAutenticidade(String email){
+        for(Funcionario f : invalidos){
+            if(f.getEmail().equals(email)){
+                return false;  //ta invalido
+            }
+        }
+        return true;  //nao ta invalido
+    }
+
+    public ArrayList<Funcionario> getValidos() {
+        return validos;
+    }
+
+    public ArrayList<Funcionario> getInvalidos() {
+        return invalidos;
+    }
+    
 }

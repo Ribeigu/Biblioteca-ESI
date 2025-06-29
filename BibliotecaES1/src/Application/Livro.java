@@ -10,31 +10,38 @@ import java.util.ArrayList;
  * @author gusta
  */
 public class Livro {
-    private String Nome;
+    private String titulo;
     private int ISBN;
-    private ArrayList<String> Autores;
+    private int edicao;
+    private ArrayList<String> autores;
     private int tombo;
-    private ArrayList<Generos> genero;
-    private Disponibilidade Disponibilidade;
+    private ArrayList<EnumGeneros> genero;
+    private EnumDisponibilidade disponibilidade;
 
-    public Livro(String Nome, int ISBN, ArrayList<String> Autores, int tombo, ArrayList<Generos> genero, Disponibilidade Disponibilidade) {
-        this.Nome = Nome;
+    public Livro(){
+        
+    }
+
+    public Livro(String titulo, int ISBN, int edicao, ArrayList<String> autores, int tombo, ArrayList<EnumGeneros> genero, EnumDisponibilidade disponibilidade) {
+        this.titulo = titulo;
         this.ISBN = ISBN;
-        this.Autores = Autores;
+        this.edicao = edicao;
+        this.autores = autores;
         this.tombo = tombo;
         this.genero = genero;
-        this.Disponibilidade = Disponibilidade;
+        this.disponibilidade = disponibilidade;
     }
 
-    public Livro() {
+    public void AtualizarDiponibilidade(EnumDisponibilidade disponibilidade){
+        this.disponibilidade = disponibilidade;
+    }
+    
+    public String getTitulo() {
+        return titulo;
     }
 
-    public String getNome() {
-        return Nome;
-    }
-
-    public void setNome(String Nome) {
-        this.Nome = Nome;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public int getISBN() {
@@ -45,12 +52,20 @@ public class Livro {
         this.ISBN = ISBN;
     }
 
-    public ArrayList<String> getAutores() {
-        return Autores;
+    public int getEdicao() {
+        return edicao;
     }
 
-    public void setAutores(ArrayList<String> Autores) {
-        this.Autores = Autores;
+    public void setEdicao(int edicao) {
+        this.edicao = edicao;
+    }
+
+    public ArrayList<String> getAutores() {
+        return autores;
+    }
+
+    public void setAutores(ArrayList<String> autores) {
+        this.autores = autores;
     }
 
     public int getTombo() {
@@ -61,24 +76,16 @@ public class Livro {
         this.tombo = tombo;
     }
 
-    public ArrayList<Generos> getGenero() {
+    public ArrayList<EnumGeneros> getGenero() {
         return genero;
     }
 
-    public void setGenero(ArrayList<Generos> genero) {
+    public void setGenero(ArrayList<EnumGeneros> genero) {
         this.genero = genero;
     }
 
-    public Disponibilidade getDisponibilidade() {
-        return Disponibilidade;
-    }
-
-    public void setDisponibilidade(Disponibilidade Disponibilidade) {
-        this.Disponibilidade = Disponibilidade;
-    }
-    
-    
-    
-    
+    public EnumDisponibilidade getDisponibilidade() {
+        return disponibilidade;
+    }   
     
 }

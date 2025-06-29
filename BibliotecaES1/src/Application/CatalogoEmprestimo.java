@@ -12,9 +12,15 @@ public class CatalogoEmprestimo {
     private ArrayList<Emprestimo> emprestimos;
     private ArrayList<Emprestimo> devolucoes;
     
-    public CatalogoEmprestimo(){
+    private CatalogoEmprestimo() {
         emprestimos = new ArrayList<>();
         devolucoes = new ArrayList<>();
+    }
+    private static CatalogoEmprestimo instancia;
+    
+    public static CatalogoEmprestimo getInstancia(){
+        if(instancia==null) instancia = new CatalogoEmprestimo();
+        return instancia;
     }
     
     public void adicionarEmprestimo(Emprestimo emprestimo){
@@ -22,29 +28,53 @@ public class CatalogoEmprestimo {
     } 
     
     public void adicionarDevolucao(Emprestimo devolucao){
-        emprestimos.remove(devolucao);   //ta certo isso??
+        emprestimos.remove(devolucao);   
         devolucoes.add(devolucao);
     } 
     
-    public boolean buscarEmprestimo(int tombo){
+    public Emprestimo BuscarEmprestimo(Livro livro){
         Livro aux;
-        for(int i=0; i<emprestimos.size(); i++){
-            aux = emprestimos.get(i).getLivro();
-            if(aux.getTombo() == tombo){
-                return true;
+        Emprestimo emprestimo;
+        for(Emprestimo e : emprestimos){
+            aux = e.getLivro();
+            if(aux.equals(aux)){
+            emprestimo = e;
+                return emprestimo;
             }
         }
-        return false;
+        return null;
     }
     
-    public boolean buscarDevolucao(int tombo){
+    public Emprestimo BuscarDevolucao(int tombo){
         Livro aux;
-        for(int i=0; i<devolucoes.size(); i++){
-            aux = devolucoes.get(i).getLivro();
+        Emprestimo devolucao;
+        for(Emprestimo d : devolucoes){
+            aux = d.getLivro();
             if(aux.getTombo() == tombo){
-                return true;
+                devolucao = d;
+                return devolucao;
             }
         }
-        return false;
+        return null;
     }
+    
+    public ArrayList<Emprestimo> BuscarEmprestimosAtrasados(String CPF){
+        ArrayList<Emprestimo> aux = new ArrayList<>(); 
+        for(Emprestimo e : emprestimos){
+            if(e.getCPF().equals(CPF)){
+                if(e.getMulta()){
+                    aux.add(e);
+                }
+            }
+        }
+        return aux;
+    }
+
+    public ArrayList<Emprestimo> getEmprestimos() {
+        return emprestimos;
+    }
+
+    public ArrayList<Emprestimo> getDevolucoes() {
+        return devolucoes;
+    }    
 }

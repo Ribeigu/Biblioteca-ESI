@@ -9,26 +9,26 @@ package Application;
  * @author Júlia
  */
 public class Usuario {
-    private String nome;
-    private String CPF;
-    private String email;
-    private String endereco;
-    private int dataDeNascimento;
-    private String telefone;
-    private EnumTipo status;
+    protected String nome;
+    protected String CPF;
+    protected String email;
+    protected String senha;
+    protected String endereco;
+    protected int dataDeNascimento;
+    protected String telefone;
     
     public Usuario(){
         
     }
 
-    public Usuario(String nome, String CPF, String email, String endereco, int dataDeNascimento, String telefone) {
+    public Usuario(String nome,String senha, String CPF, String email, String endereco, int dataDeNascimento, String telefone) {
         this.nome = nome;
+        this.senha = senha;
         this.CPF = CPF;
         this.email = email;
         this.endereco = endereco;
         this.dataDeNascimento = dataDeNascimento;
         this.telefone = telefone;
-        this.status = EnumTipo.VALIDO;
     }
 
     public String getNome() {
@@ -79,14 +79,15 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-    public EnumTipo getStatus() {
-        return status;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setStatus(EnumTipo status) {
-        this.status = status;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
-    
+
+   
     
     
 }

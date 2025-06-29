@@ -14,53 +14,50 @@ public class Emprestimo {
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
     private LocalDate dataAtual;
-    private Leitor leitor;
-    private float multa;
+    private String CPF;
+    private boolean multa;
 
     public Emprestimo(){
         
     }
     
-    public Emprestimo(Livro livro, Leitor leitor, float multa) {
+    public Emprestimo(String CPF) {
+        this.CPF = CPF;
+        this.multa = false;
+    }
+        
+    public void FazerEmprestimo(Livro livro){
         this.livro = livro;
-        this.dataEmprestimo = LocalDate.now();
-        this.dataDevolucao = dataEmprestimo.plusDays(10);
-        this.leitor = leitor;
-        this.multa = multa;
+        CalcularDataDevolucao();
     }
     
-    //é a Biblioteca que coloca um empréstimo no catálogo
+    public void CalcularDataDevolucao(){
+        this.dataEmprestimo = LocalDate.now();
+        this.dataDevolucao = dataEmprestimo.plusDays(10);
+    }
     
-    public boolean atualizaEmprestimo(){
-        boolean bool = verificaMulta();
-        if(bool == true){
-            return false;
-        }
+    public float CalcularMulta(){
+        float valorMulta;
         dataAtual = LocalDate.now();
-        dataDevolucao = dataAtual.plusDays(10);
-        return true;
+        float dias = ChronoUnit.DAYS.between(dataDevolucao, dataAtual);
+        if(dias > 60){  
+           valorMulta = 60*5;   //valor máximo que a multa pode assumir
+        }else{
+            valorMulta = dias*5;
+        }
+        return valorMulta;
     }
     
     public boolean verificaMulta(){
         dataAtual = LocalDate.now();
-        if(dataAtual.isAfter(dataDevolucao)){
+        if(dataAtual.isAfter(dataDevolucao) == true){
             return true;
         }
         return false;
     }
     
-    public float calculaMulta(){
-        dataAtual = LocalDate.now();
-        float dias = ChronoUnit.DAYS.between(dataDevolucao, dataAtual);
-        if(dias > 60){  
-           multa = 60*5;   //valor máximo que a multa pode assumir
-        }else{
-            multa = dias*5;
-        }
-        return multa;
-    }
-    
-    public float getMulta() {
+    public boolean getMulta() {
+        multa = verificaMulta();
         return multa;
     }
     
@@ -88,11 +85,12 @@ public class Emprestimo {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public Leitor getLeitor() {
-        return leitor;
+    public String getCPF() {
+        return CPF;
     }
 
-    public void setLeitor(Leitor leitor) {
-        this.leitor = leitor;
-    }    
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
+
 }
