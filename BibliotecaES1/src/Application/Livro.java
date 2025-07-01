@@ -11,10 +11,10 @@ import java.util.ArrayList;
  */
 public class Livro {
     private String titulo;
-    private int ISBN;
+    private String ISBN;
     private int edicao;
     private ArrayList<String> autores;
-    private int tombo;
+    private String tombo;
     private ArrayList<EnumGeneros> genero;
     private EnumDisponibilidade disponibilidade;
 
@@ -22,14 +22,14 @@ public class Livro {
         
     }
 
-    public Livro(String titulo, int ISBN, int edicao, ArrayList<String> autores, int tombo, ArrayList<EnumGeneros> genero, EnumDisponibilidade disponibilidade) {
+    public Livro(String titulo, String ISBN, int edicao, ArrayList<String> autores, String tombo, ArrayList<EnumGeneros> genero) {
         this.titulo = titulo;
         this.ISBN = ISBN;
         this.edicao = edicao;
         this.autores = autores;
         this.tombo = tombo;
         this.genero = genero;
-        this.disponibilidade = disponibilidade;
+        this.disponibilidade = disponibilidade.DISPONIVEL;
     }
 
     public void AtualizarDiponibilidade(EnumDisponibilidade disponibilidade){
@@ -44,11 +44,11 @@ public class Livro {
         this.titulo = titulo;
     }
 
-    public int getISBN() {
+    public String getISBN() {
         return ISBN;
     }
 
-    public void setISBN(int ISBN) {
+    public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
 
@@ -68,11 +68,11 @@ public class Livro {
         this.autores = autores;
     }
 
-    public int getTombo() {
+    public String getTombo() {
         return tombo;
     }
 
-    public void setTombo(int tombo) {
+    public void setTombo(String tombo) {
         this.tombo = tombo;
     }
 

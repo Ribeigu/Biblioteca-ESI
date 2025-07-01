@@ -13,16 +13,18 @@ public class Leitor extends Usuario{
     private ArrayList<Emprestimo> emprestimos;
     private ArrayList<Emprestimo> emprestimosAtrasados;
     private ArrayList<Reserva> reservas;
+    private float multa;
 
     public Leitor(){
         
     }
 
-    public Leitor(ArrayList<Emprestimo> emprestimosAtrasados, ArrayList<Emprestimo> emprestimos, ArrayList<Reserva> reservas, String nome, String senha, String CPF, String email, String endereco, int dataDeNascimento, String telefone) {
+    public Leitor(String nome, String senha, String CPF, String email, String endereco, int dataDeNascimento, String telefone) {
         super(nome, senha, CPF, email, endereco, dataDeNascimento, telefone);
         this.emprestimosAtrasados = new ArrayList<>();
         this.emprestimos = new ArrayList<>();
         this.reservas = new ArrayList<>();
+        this.multa = 0;
     }
 
     public void AdicionarReserva(Reserva reserva){
@@ -41,10 +43,11 @@ public class Leitor extends Usuario{
         emprestimos.remove(emprestimo);
     }
     
-    public void AdicionarEmprestimosAtrasados(ArrayList<Emprestimo> emprestimos){
+    public void AdicionarEmprestimosAtrasados(ArrayList<Emprestimo> emprestimos, float multa){
         for(Emprestimo e : emprestimos){
             emprestimosAtrasados.add(e);
         }
+        this.multa = multa;
     }
     
     public ArrayList<Emprestimo> RemoverEmprestimosAtrasados(){
@@ -72,5 +75,9 @@ public class Leitor extends Usuario{
 
     public ArrayList<Reserva> getReservas() {
         return reservas;
+    }
+    
+    public float getMulta(){
+        return multa;
     }
 }

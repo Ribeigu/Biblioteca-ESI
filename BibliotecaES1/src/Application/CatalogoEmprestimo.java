@@ -23,11 +23,11 @@ public class CatalogoEmprestimo {
         return instancia;
     }
     
-    public void adicionarEmprestimo(Emprestimo emprestimo){
+    public void AdicionarEmprestimo(Emprestimo emprestimo){
         emprestimos.add(emprestimo);
     } 
     
-    public void adicionarDevolucao(Emprestimo devolucao){
+    public void AdicionarDevolucao(Emprestimo devolucao){
         emprestimos.remove(devolucao);   
         devolucoes.add(devolucao);
     } 
@@ -45,12 +45,12 @@ public class CatalogoEmprestimo {
         return null;
     }
     
-    public Emprestimo BuscarDevolucao(int tombo){
+    public Emprestimo BuscarDevolucao(String tombo){
         Livro aux;
         Emprestimo devolucao;
         for(Emprestimo d : devolucoes){
             aux = d.getLivro();
-            if(aux.getTombo() == tombo){
+            if(aux.getTombo().equals(tombo)){
                 devolucao = d;
                 return devolucao;
             }

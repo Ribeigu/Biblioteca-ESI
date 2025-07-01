@@ -20,13 +20,10 @@ public class Emprestimo {
     public Emprestimo(){
         
     }
-    
-    public Emprestimo(String CPF) {
+        
+    public void FazerEmprestimo(String CPF, Livro livro){
         this.CPF = CPF;
         this.multa = false;
-    }
-        
-    public void FazerEmprestimo(Livro livro){
         this.livro = livro;
         CalcularDataDevolucao();
     }

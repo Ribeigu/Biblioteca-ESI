@@ -33,9 +33,9 @@ public class CatalogoReserva {
         return aux;
     }
     
-    public Livro RemoverReserva(int tombo){
+    public Livro RemoverReservaLivro(String tombo){
         for(Reserva r : reservas){
-            if(r.getLivro().getTombo() == tombo){
+            if(r.getLivro().getTombo().equals(tombo)){
                 Livro aux = r.getLivro();
                 reservas.remove(r);
                 return aux;
@@ -44,13 +44,24 @@ public class CatalogoReserva {
         return null;
     }
     
-    public boolean VerificarExistenciaReserva(int ISBN, String CPF){
+    public Reserva RemoverReserva(String tombo){
         for(Reserva r : reservas){
-            if(r.getCPF().equals(CPF) && r.getLivro().getISBN() == ISBN){
-                return true;
+            if(r.getLivro().getTombo().equals(tombo)){
+                reservas.remove(r);
+                return r;
             }
         }
-        return false;
+        return null;
+    }
+    
+    
+    public Reserva VerificarExistenciaReserva(String ISBN, String CPF){
+        for(Reserva r : reservas){
+            if(r.getCPF().equals(CPF) && r.getLivro().getISBN().equals(ISBN)){
+                return r;
+            }
+        }
+        return null;
     }
 
     public ArrayList<Reserva> getReservas() {

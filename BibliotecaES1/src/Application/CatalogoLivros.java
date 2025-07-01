@@ -21,43 +21,55 @@ public class CatalogoLivros {
     }
     
     public void AdicionarExemplar(Livro livro){
-        int ISBN = livro.getISBN();
+        String ISBN = livro.getISBN();
         for(CatalogoExemplar e : livros){
-            if(e.getISBN() == ISBN){
+            if(e.getISBN().equals(ISBN)){
                 e.AdicionarExemplar(livro);
             }
         }
+    }
+    
+     public void AdicionarCatalogoExemplar(CatalogoExemplar catalogoExemplar){
+        livros.add(catalogoExemplar);
     }
     
     public int tamanhoCatalogo(){
         return livros.size();
     }
     
-    public int VerificarQuantidade(int ISBN){
+    public int VerificarQuantidade(String ISBN){
         for(CatalogoExemplar e : livros){
-            if(e.getISBN() == ISBN){
+            if(e.getISBN().equals(ISBN)){
                 return e.TamanhoCatalogo();
             }
         }
         return 0;
     }
     
-    public boolean VerificarDisponibilidade(int ISBN){
+    public boolean VerificarDisponibilidade(String ISBN){
         for(CatalogoExemplar e : livros){
-            if(e.getISBN() == ISBN){
+            if(e.getISBN().equals(ISBN)){
                 return e.VerificarDisponibilidade();
             }
         }
         return false;
     }
     
-    public boolean BuscarCatalogoExemplar(int ISBN){
+    public boolean BuscarCatalogoExemplar(String ISBN){
         for(CatalogoExemplar e : livros){
-            if(e.getISBN() == ISBN){
+            if(e.getISBN().equals(ISBN)){
                 return true;
             }
         }
         return false;
     }
     
+    public Livro BuscarLivro(String ISBN, String tombo){
+        for(CatalogoExemplar e : livros){
+            if(e.getISBN().equals(ISBN)){
+                return e.BuscarLivro(tombo);
+            }
+        }
+        return null;
+    }
 }

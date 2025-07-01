@@ -10,9 +10,9 @@ import java.util.ArrayList;
  */
 public class CatalogoExemplar {
     private final ArrayList<Livro> exemplares;
-    private final int ISBN;
+    private final String ISBN;
 
-    public CatalogoExemplar(int ISBN) {
+    public CatalogoExemplar(String ISBN) {
         this.exemplares = new ArrayList<>();
         this.ISBN = ISBN;
     }
@@ -29,9 +29,9 @@ public class CatalogoExemplar {
         exemplares.add(livro);
     }
     
-    public Livro BuscarLivro(int tombo){
+    public Livro BuscarLivro(String tombo){
         for(Livro e : exemplares){
-            if(e.getTombo() == tombo){
+            if(e.getTombo().equals(tombo)){
                 return e;
             }
         }
@@ -47,7 +47,7 @@ public class CatalogoExemplar {
         return false;
     }
 
-    public int getISBN() {
+    public String getISBN() {
         return ISBN;
     }
    

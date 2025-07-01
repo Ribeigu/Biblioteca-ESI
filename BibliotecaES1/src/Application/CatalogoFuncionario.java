@@ -57,7 +57,26 @@ public class CatalogoFuncionario {
                 return false;  //ta invalido
             }
         }
-        return true;  //nao ta invalido
+        for(Funcionario f : validos){
+            if(f.getEmail().equals(email)){
+                return true;  //nao ta invalido
+            }
+        }
+        return false;  //nao ta cadastrado
+    }
+    
+    public boolean VerificarAutenticidadeLogin(String email, String senha){
+        for(Funcionario f : invalidos){
+            if(f.getEmail().equals(email)){
+                return false;  //ta invalido
+            }
+        }
+        for(Funcionario f : validos){
+            if(f.getEmail().equals(email) && f.getSenha().equals(senha)){
+                return true;  //ta valido
+            }
+        }
+        return false;  //nao ta cadastrado
     }
 
     public ArrayList<Funcionario> getValidos() {
