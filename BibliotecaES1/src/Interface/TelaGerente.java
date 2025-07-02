@@ -30,6 +30,10 @@ public class TelaGerente extends javax.swing.JFrame {
         AbaContaGerente = new javax.swing.JMenu();
         AbaCadastrarFuncionarioGerente = new javax.swing.JMenu();
         AbaCancelarContaFuncionarioGerente = new javax.swing.JMenu();
+        AbaFazerEmprestimo = new javax.swing.JMenu();
+        AbaFazerDevolucao = new javax.swing.JMenu();
+        AbaPagamentoMulta = new javax.swing.JMenu();
+        AbaSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,17 +51,29 @@ public class TelaGerente extends javax.swing.JFrame {
         AbaCancelarContaFuncionarioGerente.setText("Cancelar conta de funcionário");
         MenuGerente.add(AbaCancelarContaFuncionarioGerente);
 
+        AbaFazerEmprestimo.setText("Fazer empréstimo");
+        MenuGerente.add(AbaFazerEmprestimo);
+
+        AbaFazerDevolucao.setText("Fazer devolução");
+        MenuGerente.add(AbaFazerDevolucao);
+
+        AbaPagamentoMulta.setText("Fazer pagamento de multa");
+        MenuGerente.add(AbaPagamentoMulta);
+
+        AbaSair.setText("Sair");
+        MenuGerente.add(AbaSair);
+
         setJMenuBar(MenuGerente);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 671, Short.MAX_VALUE)
+            .addGap(0, 759, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 312, Short.MAX_VALUE)
         );
 
         pack();
@@ -108,6 +124,10 @@ public class TelaGerente extends javax.swing.JFrame {
     private javax.swing.JMenu AbaCadastrarFuncionarioGerente;
     private javax.swing.JMenu AbaCancelarContaFuncionarioGerente;
     private javax.swing.JMenu AbaContaGerente;
+    private javax.swing.JMenu AbaFazerDevolucao;
+    private javax.swing.JMenu AbaFazerEmprestimo;
+    private javax.swing.JMenu AbaPagamentoMulta;
+    private javax.swing.JMenu AbaSair;
     private javax.swing.JMenuBar MenuGerente;
     // End of variables declaration//GEN-END:variables
 }

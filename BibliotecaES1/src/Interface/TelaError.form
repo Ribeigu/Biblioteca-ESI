@@ -1,42 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Menu class="javax.swing.JMenuBar" name="MenuFuncionario">
-      <SubComponents>
-        <Menu class="javax.swing.JMenu" name="AbaContaFuncionario">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Conta"/>
-          </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="AbaEmprestimoFuncionario">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Fazer empr&#xe9;stimo"/>
-          </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="AbaDevolucaoFuncionario">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Fazer Devolu&#xe7;&#xe3;o"/>
-          </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="AbaPagarMultaFuncionario">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Fazer pagamento de multa"/>
-          </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="AbaSair">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Sair"/>
-          </Properties>
-        </Menu>
-      </SubComponents>
-    </Menu>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="MenuFuncionario"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -55,13 +23,32 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="635" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="TextoError" min="-2" pref="353" max="-2" attributes="0"/>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="408" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <Component id="TextoError" min="-2" pref="246" max="-2" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="TextoError">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="36" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>

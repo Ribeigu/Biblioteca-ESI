@@ -6,14 +6,14 @@ package Interface;
 
 /**
  *
- * @author Júlia
+ * @author gusta
  */
-public class TelaFuncionario extends javax.swing.JFrame {
+public class TelaError extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaFuncionario
+     * Creates new form TelaError
      */
-    public TelaFuncionario() {
+    public TelaError() {
         initComponents();
     }
 
@@ -26,41 +26,29 @@ public class TelaFuncionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        MenuFuncionario = new javax.swing.JMenuBar();
-        AbaContaFuncionario = new javax.swing.JMenu();
-        AbaEmprestimoFuncionario = new javax.swing.JMenu();
-        AbaDevolucaoFuncionario = new javax.swing.JMenu();
-        AbaPagarMultaFuncionario = new javax.swing.JMenu();
-        AbaSair = new javax.swing.JMenu();
+        TextoError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        AbaContaFuncionario.setText("Conta");
-        MenuFuncionario.add(AbaContaFuncionario);
-
-        AbaEmprestimoFuncionario.setText("Fazer empréstimo");
-        MenuFuncionario.add(AbaEmprestimoFuncionario);
-
-        AbaDevolucaoFuncionario.setText("Fazer Devolução");
-        MenuFuncionario.add(AbaDevolucaoFuncionario);
-
-        AbaPagarMultaFuncionario.setText("Fazer pagamento de multa");
-        MenuFuncionario.add(AbaPagarMultaFuncionario);
-
-        AbaSair.setText("Sair");
-        MenuFuncionario.add(AbaSair);
-
-        setJMenuBar(MenuFuncionario);
+        TextoError.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        TextoError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TextoError.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 635, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(TextoError, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 408, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(TextoError, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -83,30 +71,25 @@ public class TelaFuncionario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaError.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaError.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaError.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaError.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaFuncionario().setVisible(true);
+                new TelaError().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu AbaContaFuncionario;
-    private javax.swing.JMenu AbaDevolucaoFuncionario;
-    private javax.swing.JMenu AbaEmprestimoFuncionario;
-    private javax.swing.JMenu AbaPagarMultaFuncionario;
-    private javax.swing.JMenu AbaSair;
-    private javax.swing.JMenuBar MenuFuncionario;
+    private javax.swing.JLabel TextoError;
     // End of variables declaration//GEN-END:variables
 }
