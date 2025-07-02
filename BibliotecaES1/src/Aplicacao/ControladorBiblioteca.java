@@ -20,9 +20,20 @@ public class ControladorBiblioteca {
     private CatalogoReserva catalogoReserva;
     private static ControladorBiblioteca instancia;
     
+    public ControladorBiblioteca(){
+    }
+    
     public static ControladorBiblioteca getInstancia(){
         if(instancia==null) instancia = new ControladorBiblioteca();
         return instancia;
+    }
+    
+    public void Instanciar(){
+        this.catalogoLivros= catalogoLivros.getInstancia();
+        this.catalogoLeitor = catalogoLeitor.getInstancia();
+        this.catalogoFuncionario = catalogoFuncionario.getInstancia();
+        this.catalogoReserva = catalogoReserva.getInstancia();
+        this.catalogoEmprestimo =catalogoEmprestimo.getInstancia();
     }
     
     public void FazerRegistroLivro(String titulo, ArrayList<String> autores, int edicao, String ISBN, ArrayList<EnumGeneros> generos){
