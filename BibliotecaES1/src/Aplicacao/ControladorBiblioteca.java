@@ -108,6 +108,7 @@ public class ControladorBiblioteca {
     
     public boolean FazerEmprestimoLivro(String CPF, String ISBN, String tombo){
         Reserva reserva = catalogoReserva.VerificarExistenciaReserva(ISBN, CPF);
+        
         if(reserva == null){
             if(catalogoLivros.VerificarDisponibilidade(ISBN) == false){
                 return false;
