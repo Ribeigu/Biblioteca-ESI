@@ -38,6 +38,10 @@ public class CatalogoExemplar {
         return null;
     }
     
+    public String getTitulo(){
+        return exemplares.get(0).getTitulo();
+    }
+    
     public boolean VerificarDisponibilidade(){
         for(Livro e : exemplares){
             if(e.getDisponibilidade().equals(EnumDisponibilidade.DISPONIVEL)){

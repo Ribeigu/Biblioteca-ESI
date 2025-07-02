@@ -4,6 +4,9 @@
  */
 package Interface;
 
+import Aplicacao.ControladorBiblioteca;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gusta
@@ -29,12 +32,14 @@ public class TelaEmprestimo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        TextoCPF = new javax.swing.JTextField();
-        TextoISBN = new javax.swing.JTextField();
-        TextoTombo = new javax.swing.JTextField();
+        TxtEmprestimoCPF = new javax.swing.JTextField();
+        TxtEmprestimoISBN = new javax.swing.JTextField();
+        TxtEmprestimoTombo = new javax.swing.JTextField();
         BotaoEmprestimo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Fazer empréstimo");
+        setResizable(false);
 
         jLabel1.setText("CPF");
 
@@ -42,15 +47,15 @@ public class TelaEmprestimo extends javax.swing.JFrame {
 
         jLabel3.setText("ISBN");
 
-        TextoCPF.addActionListener(new java.awt.event.ActionListener() {
+        TxtEmprestimoCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextoCPFActionPerformed(evt);
+                TxtEmprestimoCPFActionPerformed(evt);
             }
         });
 
-        TextoISBN.addActionListener(new java.awt.event.ActionListener() {
+        TxtEmprestimoISBN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextoISBNActionPerformed(evt);
+                TxtEmprestimoISBNActionPerformed(evt);
             }
         });
 
@@ -68,17 +73,17 @@ public class TelaEmprestimo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TextoISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtEmprestimoISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(TxtEmprestimoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(BotaoEmprestimo)
-                        .addComponent(TextoTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(TxtEmprestimoTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -87,15 +92,15 @@ public class TelaEmprestimo extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TextoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtEmprestimoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(jLabel3)
                 .addGap(11, 11, 11)
-                .addComponent(TextoISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtEmprestimoISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TextoTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtEmprestimoTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BotaoEmprestimo)
                 .addContainerGap(29, Short.MAX_VALUE))
@@ -104,16 +109,24 @@ public class TelaEmprestimo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TextoCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoCPFActionPerformed
+    private void TxtEmprestimoCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtEmprestimoCPFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextoCPFActionPerformed
+    }//GEN-LAST:event_TxtEmprestimoCPFActionPerformed
 
-    private void TextoISBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoISBNActionPerformed
+    private void TxtEmprestimoISBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtEmprestimoISBNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextoISBNActionPerformed
+    }//GEN-LAST:event_TxtEmprestimoISBNActionPerformed
 
     private void BotaoEmprestimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEmprestimoActionPerformed
         // TODO add your handling code here:
+        String CPF = TxtEmprestimoCPF.getText();
+        String ISBN = TxtEmprestimoISBN.getText();
+        String tombo = TxtEmprestimoTombo.getText();
+        ControladorBiblioteca biblioteca = new ControladorBiblioteca();
+        if(biblioteca.FazerEmprestimoLivro(CPF, ISBN, tombo)==true){
+            JOptionPane.showMessageDialog(null, "Empréstimo feito com sucesso!");
+        }
+        JOptionPane.showMessageDialog(null, "O empréstimo não pode ser concluído");
     }//GEN-LAST:event_BotaoEmprestimoActionPerformed
 
     /**
@@ -153,9 +166,9 @@ public class TelaEmprestimo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoEmprestimo;
-    private javax.swing.JTextField TextoCPF;
-    private javax.swing.JTextField TextoISBN;
-    private javax.swing.JTextField TextoTombo;
+    private javax.swing.JTextField TxtEmprestimoCPF;
+    private javax.swing.JTextField TxtEmprestimoISBN;
+    private javax.swing.JTextField TxtEmprestimoTombo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

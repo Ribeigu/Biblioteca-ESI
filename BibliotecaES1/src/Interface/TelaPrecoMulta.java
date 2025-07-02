@@ -4,16 +4,19 @@
  */
 package Interface;
 
+import Aplicacao.ControladorBiblioteca;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author gusta
+ * @author Júlia
  */
-public class TelaCancelarFuncionario extends javax.swing.JFrame {
+public class TelaPrecoMulta extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaCancelarFuncionario
+     * Creates new form TelaPrecoMulta
      */
-    public TelaCancelarFuncionario() {
+    public TelaPrecoMulta() {
         initComponents();
     }
 
@@ -26,64 +29,74 @@ public class TelaCancelarFuncionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TxtCancelarFuncionarioCPF = new javax.swing.JTextField();
-        BotaoRemoverFuncionario = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        TxtPrecoCPF = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cancelar conta de funcionario");
+        setTitle("Calcular preco da multa");
         setResizable(false);
 
-        TxtCancelarFuncionarioCPF.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setText("CPF:");
+
+        jButton1.setText("Calcular multa");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtCancelarFuncionarioCPFActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        BotaoRemoverFuncionario.setText("Remover funcionário");
-        BotaoRemoverFuncionario.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Efetuar Pagamento");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoRemoverFuncionarioActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-
-        jLabel1.setText("CPF");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotaoRemoverFuncionario)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(TxtCancelarFuncionarioCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addGap(62, 62, 62)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtPrecoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(50, 50, 50)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TxtCancelarFuncionarioCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtPrecoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jButton1)
                 .addGap(18, 18, 18)
-                .addComponent(BotaoRemoverFuncionario)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addComponent(jButton2)
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TxtCancelarFuncionarioCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCancelarFuncionarioCPFActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtCancelarFuncionarioCPFActionPerformed
+        String CPF = TxtPrecoCPF.getText();
+        ControladorBiblioteca biblioteca = new ControladorBiblioteca();
+        float preco = biblioteca.PagarMulta(CPF);
+        JOptionPane.showMessageDialog(null, "O preco da multa é R$" + preco);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void BotaoRemoverFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoRemoverFuncionarioActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoRemoverFuncionarioActionPerformed
+        new TelaPagarMulta().setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,27 +115,28 @@ public class TelaCancelarFuncionario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCancelarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrecoMulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCancelarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrecoMulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCancelarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrecoMulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCancelarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrecoMulta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCancelarFuncionario().setVisible(true);
+                new TelaPrecoMulta().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotaoRemoverFuncionario;
-    private javax.swing.JTextField TxtCancelarFuncionarioCPF;
+    private javax.swing.JTextField TxtPrecoCPF;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -38,6 +38,7 @@ public class TelaLoginFuncionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Loggar como Funcionario");
+        setResizable(false);
 
         jLabel1.setText("Email");
 

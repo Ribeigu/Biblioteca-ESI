@@ -37,6 +37,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fazer login");
+        setResizable(false);
 
         BotaoLoginComoLeitor.setText("Leitor");
         BotaoLoginComoLeitor.addActionListener(new java.awt.event.ActionListener() {

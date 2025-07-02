@@ -4,6 +4,9 @@
  */
 package Interface;
 
+import Aplicacao.ControladorBiblioteca;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gusta
@@ -26,38 +29,30 @@ public class TelaDevolucao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TextoTombo = new javax.swing.JTextField();
-        BotaoMulta = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        TxtDevolucaoISBN = new javax.swing.JTextField();
+        BotaoDevolucao = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        TextoCPF = new javax.swing.JTextField();
-        TextoISBN = new javax.swing.JTextField();
+        TxtDevolucaoTombo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Fazer devolução");
+        setResizable(false);
 
-        BotaoMulta.setText("Fazer devolução");
-        BotaoMulta.addActionListener(new java.awt.event.ActionListener() {
+        BotaoDevolucao.setText("Fazer devolução");
+        BotaoDevolucao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoMultaActionPerformed(evt);
+                BotaoDevolucaoActionPerformed(evt);
             }
         });
-
-        jLabel1.setText("CPF");
 
         jLabel2.setText("Tombo");
 
         jLabel3.setText("ISBN");
 
-        TextoCPF.addActionListener(new java.awt.event.ActionListener() {
+        TxtDevolucaoTombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextoCPFActionPerformed(evt);
-            }
-        });
-
-        TextoISBN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextoISBNActionPerformed(evt);
+                TxtDevolucaoTomboActionPerformed(evt);
             }
         });
 
@@ -67,51 +62,49 @@ public class TelaDevolucao extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotaoMulta)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TextoISBN)
-                        .addComponent(jLabel2)
-                        .addComponent(TextoCPF)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TextoTombo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(BotaoDevolucao)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TxtDevolucaoTombo)
+                            .addComponent(TxtDevolucaoISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))))
                 .addContainerGap(93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextoTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(61, 61, 61)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextoISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtDevolucaoISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TxtDevolucaoTombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(BotaoMulta)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addComponent(BotaoDevolucao)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotaoMultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMultaActionPerformed
+    private void BotaoDevolucaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoDevolucaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoMultaActionPerformed
+        String ISBN = TxtDevolucaoISBN.getText();
+        String tombo = TxtDevolucaoTombo.getText();
+        ControladorBiblioteca biblioteca = new ControladorBiblioteca();
+        if(biblioteca.DevolverLivro(ISBN, tombo)){
+            JOptionPane.showMessageDialog(null, "Há multa a ser paga");
+        }
+        JOptionPane.showMessageDialog(null, "Devolução feita com sucesso");
+    }//GEN-LAST:event_BotaoDevolucaoActionPerformed
 
-    private void TextoCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoCPFActionPerformed
+    private void TxtDevolucaoTomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtDevolucaoTomboActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextoCPFActionPerformed
-
-    private void TextoISBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoISBNActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextoISBNActionPerformed
+    }//GEN-LAST:event_TxtDevolucaoTomboActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,11 +142,9 @@ public class TelaDevolucao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotaoMulta;
-    private javax.swing.JTextField TextoCPF;
-    private javax.swing.JTextField TextoISBN;
-    private javax.swing.JTextField TextoTombo;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton BotaoDevolucao;
+    private javax.swing.JTextField TxtDevolucaoISBN;
+    private javax.swing.JTextField TxtDevolucaoTombo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables

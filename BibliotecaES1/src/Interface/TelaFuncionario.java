@@ -27,28 +27,44 @@ public class TelaFuncionario extends javax.swing.JFrame {
     private void initComponents() {
 
         MenuFuncionario = new javax.swing.JMenuBar();
-        AbaContaFuncionario = new javax.swing.JMenu();
+        AbaLivroFuncionario = new javax.swing.JMenu();
         AbaEmprestimoFuncionario = new javax.swing.JMenu();
         AbaDevolucaoFuncionario = new javax.swing.JMenu();
         AbaPagarMultaFuncionario = new javax.swing.JMenu();
-        AbaSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        AbaContaFuncionario.setText("Conta");
-        MenuFuncionario.add(AbaContaFuncionario);
+        AbaLivroFuncionario.setText("Registrar Livro");
+        AbaLivroFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbaLivroFuncionarioActionPerformed(evt);
+            }
+        });
+        MenuFuncionario.add(AbaLivroFuncionario);
 
         AbaEmprestimoFuncionario.setText("Fazer empréstimo");
+        AbaEmprestimoFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbaEmprestimoFuncionarioActionPerformed(evt);
+            }
+        });
         MenuFuncionario.add(AbaEmprestimoFuncionario);
 
-        AbaDevolucaoFuncionario.setText("Fazer Devolução");
+        AbaDevolucaoFuncionario.setText("Fazer devolução");
+        AbaDevolucaoFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbaDevolucaoFuncionarioActionPerformed(evt);
+            }
+        });
         MenuFuncionario.add(AbaDevolucaoFuncionario);
 
         AbaPagarMultaFuncionario.setText("Fazer pagamento de multa");
+        AbaPagarMultaFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbaPagarMultaFuncionarioActionPerformed(evt);
+            }
+        });
         MenuFuncionario.add(AbaPagarMultaFuncionario);
-
-        AbaSair.setText("Sair");
-        MenuFuncionario.add(AbaSair);
 
         setJMenuBar(MenuFuncionario);
 
@@ -65,6 +81,26 @@ public class TelaFuncionario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AbaLivroFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbaLivroFuncionarioActionPerformed
+        // TODO add your handling code here:
+        new TelaLivro().setVisible(true);
+    }//GEN-LAST:event_AbaLivroFuncionarioActionPerformed
+
+    private void AbaEmprestimoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbaEmprestimoFuncionarioActionPerformed
+        // TODO add your handling code here:
+        new TelaEmprestimo().setVisible(true);
+    }//GEN-LAST:event_AbaEmprestimoFuncionarioActionPerformed
+
+    private void AbaDevolucaoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbaDevolucaoFuncionarioActionPerformed
+        // TODO add your handling code here:
+        new TelaDevolucao().setVisible(true);
+    }//GEN-LAST:event_AbaDevolucaoFuncionarioActionPerformed
+
+    private void AbaPagarMultaFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbaPagarMultaFuncionarioActionPerformed
+        // TODO add your handling code here:
+        new TelaPrecoMulta().setVisible(true);
+    }//GEN-LAST:event_AbaPagarMultaFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,11 +138,10 @@ public class TelaFuncionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu AbaContaFuncionario;
     private javax.swing.JMenu AbaDevolucaoFuncionario;
     private javax.swing.JMenu AbaEmprestimoFuncionario;
+    private javax.swing.JMenu AbaLivroFuncionario;
     private javax.swing.JMenu AbaPagarMultaFuncionario;
-    private javax.swing.JMenu AbaSair;
     private javax.swing.JMenuBar MenuFuncionario;
     // End of variables declaration//GEN-END:variables
 }

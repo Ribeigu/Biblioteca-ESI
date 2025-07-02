@@ -4,6 +4,9 @@
  */
 package Interface;
 
+import Aplicacao.ControladorBiblioteca;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gusta
@@ -26,18 +29,20 @@ public class TelaPagarMulta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BotaoMulta = new javax.swing.JButton();
+        BotaoPagarMulta = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        TextoCPF = new javax.swing.JTextField();
-        TextoValor = new javax.swing.JTextField();
+        TxtPagarMultaCPF = new javax.swing.JTextField();
+        TxtPagarMultaValor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Efetuar pagamento da multa");
+        setResizable(false);
 
-        BotaoMulta.setText("Pagar multa");
-        BotaoMulta.addActionListener(new java.awt.event.ActionListener() {
+        BotaoPagarMulta.setText("Pagar multa");
+        BotaoPagarMulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoMultaActionPerformed(evt);
+                BotaoPagarMultaActionPerformed(evt);
             }
         });
 
@@ -45,16 +50,16 @@ public class TelaPagarMulta extends javax.swing.JFrame {
 
         jLabel3.setText("Valor Inserido");
 
-        TextoCPF.addActionListener(new java.awt.event.ActionListener() {
+        TxtPagarMultaCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextoCPFActionPerformed(evt);
+                TxtPagarMultaCPFActionPerformed(evt);
             }
         });
 
-        TextoValor.setText("R$xx.xx");
-        TextoValor.addActionListener(new java.awt.event.ActionListener() {
+        TxtPagarMultaValor.setText("R$xx.xx");
+        TxtPagarMultaValor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextoValorActionPerformed(evt);
+                TxtPagarMultaValorActionPerformed(evt);
             }
         });
 
@@ -65,16 +70,15 @@ public class TelaPagarMulta extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TextoValor, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtPagarMultaCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(BotaoMulta)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(BotaoPagarMulta)
+                        .addComponent(TxtPagarMultaValor, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(137, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -83,30 +87,39 @@ public class TelaPagarMulta extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TextoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TxtPagarMultaCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(jLabel3)
                 .addGap(11, 11, 11)
-                .addComponent(TextoValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
-                .addComponent(BotaoMulta)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addComponent(TxtPagarMultaValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(BotaoPagarMulta)
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotaoMultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoMultaActionPerformed
+    private void BotaoPagarMultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoPagarMultaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoMultaActionPerformed
+        String CPF = TxtPagarMultaCPF.getText();
+        float valor = Float.parseFloat(TxtPagarMultaValor.getText());
+        ControladorBiblioteca biblioteca = new ControladorBiblioteca();
+        float troco = biblioteca.EfetuarPagamento(CPF, valor);
+        if(troco != -1){
+            JOptionPane.showMessageDialog(null, "O troco é R$" + troco);
+        } else {
+            JOptionPane.showMessageDialog(null, "O dinheiro é insuficiente");   
+        }
+    }//GEN-LAST:event_BotaoPagarMultaActionPerformed
 
-    private void TextoCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoCPFActionPerformed
+    private void TxtPagarMultaCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtPagarMultaCPFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextoCPFActionPerformed
+    }//GEN-LAST:event_TxtPagarMultaCPFActionPerformed
 
-    private void TextoValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoValorActionPerformed
+    private void TxtPagarMultaValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtPagarMultaValorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextoValorActionPerformed
+    }//GEN-LAST:event_TxtPagarMultaValorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,9 +157,9 @@ public class TelaPagarMulta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotaoMulta;
-    private javax.swing.JTextField TextoCPF;
-    private javax.swing.JTextField TextoValor;
+    private javax.swing.JButton BotaoPagarMulta;
+    private javax.swing.JTextField TxtPagarMultaCPF;
+    private javax.swing.JTextField TxtPagarMultaValor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables

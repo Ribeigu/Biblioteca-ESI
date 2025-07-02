@@ -26,28 +26,35 @@ public class TelaLeitor extends javax.swing.JFrame {
     private void initComponents() {
 
         MenuLeitor = new javax.swing.JMenuBar();
-        AbaContaLeitor = new javax.swing.JMenu();
         AbaEmprestimosLeitor = new javax.swing.JMenu();
         AbaReservasLeitor = new javax.swing.JMenu();
         AbaBuscarLivroLeitor = new javax.swing.JMenu();
-        AbaSairLeitor = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        AbaContaLeitor.setText("Conta");
-        MenuLeitor.add(AbaContaLeitor);
-
         AbaEmprestimosLeitor.setText("Emprestimos");
+        AbaEmprestimosLeitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbaEmprestimosLeitorActionPerformed(evt);
+            }
+        });
         MenuLeitor.add(AbaEmprestimosLeitor);
 
         AbaReservasLeitor.setText("Reservas");
+        AbaReservasLeitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbaReservasLeitorActionPerformed(evt);
+            }
+        });
         MenuLeitor.add(AbaReservasLeitor);
 
         AbaBuscarLivroLeitor.setText("Buscar livro");
+        AbaBuscarLivroLeitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbaBuscarLivroLeitorActionPerformed(evt);
+            }
+        });
         MenuLeitor.add(AbaBuscarLivroLeitor);
-
-        AbaSairLeitor.setText("Sair");
-        MenuLeitor.add(AbaSairLeitor);
 
         setJMenuBar(MenuLeitor);
 
@@ -64,6 +71,21 @@ public class TelaLeitor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AbaEmprestimosLeitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbaEmprestimosLeitorActionPerformed
+        // TODO add your handling code here:
+        new TelaEmprestimos().setVisible(true);
+    }//GEN-LAST:event_AbaEmprestimosLeitorActionPerformed
+
+    private void AbaReservasLeitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbaReservasLeitorActionPerformed
+        // TODO add your handling code here:
+        new TelaReservas().setVisible(true);
+    }//GEN-LAST:event_AbaReservasLeitorActionPerformed
+
+    private void AbaBuscarLivroLeitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbaBuscarLivroLeitorActionPerformed
+        // TODO add your handling code here:
+        new TelaBusca().setVisible(true);
+    }//GEN-LAST:event_AbaBuscarLivroLeitorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,10 +124,8 @@ public class TelaLeitor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu AbaBuscarLivroLeitor;
-    private javax.swing.JMenu AbaContaLeitor;
     private javax.swing.JMenu AbaEmprestimosLeitor;
     private javax.swing.JMenu AbaReservasLeitor;
-    private javax.swing.JMenu AbaSairLeitor;
     private javax.swing.JMenuBar MenuLeitor;
     // End of variables declaration//GEN-END:variables
 }

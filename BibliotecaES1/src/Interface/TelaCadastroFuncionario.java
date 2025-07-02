@@ -53,6 +53,7 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar como Funcionario");
+        setResizable(false);
 
         jLabel1.setText("Nome ");
 

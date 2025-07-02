@@ -229,4 +229,12 @@ public class ControladorBiblioteca {
     public void ImprimirCatalogoLivros(){
         catalogoLivros.ImprimirCatalogo();
     } 
+    
+    public Livro BuscarLivroTitulo(String titulo){
+        return catalogoLivros.BuscarLivroTitulo(titulo);
+    }
+    
+    public Livro BuscarLivroISBN(String ISBN){
+        return catalogoLivros.BuscarLivroISBN(ISBN);
+    }
 }

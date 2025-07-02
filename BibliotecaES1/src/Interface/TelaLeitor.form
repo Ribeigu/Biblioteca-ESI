@@ -4,30 +4,29 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="MenuLeitor">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="AbaContaLeitor">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Conta"/>
-          </Properties>
-        </Menu>
         <Menu class="javax.swing.JMenu" name="AbaEmprestimosLeitor">
           <Properties>
             <Property name="text" type="java.lang.String" value="Emprestimos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AbaEmprestimosLeitorActionPerformed"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="AbaReservasLeitor">
           <Properties>
             <Property name="text" type="java.lang.String" value="Reservas"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AbaReservasLeitorActionPerformed"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="AbaBuscarLivroLeitor">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar livro"/>
           </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="AbaSairLeitor">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Sair"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AbaBuscarLivroLeitorActionPerformed"/>
+          </Events>
         </Menu>
       </SubComponents>
     </Menu>

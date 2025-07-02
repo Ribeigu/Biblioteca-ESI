@@ -6,14 +6,14 @@ package Interface;
 
 /**
  *
- * @author gusta
+ * @author Júlia
  */
-public class TelaReserva extends javax.swing.JFrame {
+public class TelaEmprestimos extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaReserva
+     * Creates new form TelaEmprestimos
      */
-    public TelaReserva() {
+    public TelaEmprestimos() {
         initComponents();
     }
 
@@ -26,62 +26,57 @@ public class TelaReserva extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TextoCPF = new javax.swing.JTextField();
-        BotaoRemoverFuncionario = new javax.swing.JButton();
+        BotaoEmprestimosVoltar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        TxtEmprestimos = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        TextoCPF.addActionListener(new java.awt.event.ActionListener() {
+        BotaoEmprestimosVoltar.setText("Voltar");
+        BotaoEmprestimosVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextoCPFActionPerformed(evt);
+                BotaoEmprestimosVoltarActionPerformed(evt);
             }
         });
 
-        BotaoRemoverFuncionario.setText("Reservar");
-        BotaoRemoverFuncionario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoRemoverFuncionarioActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("ISBN");
+        jLabel1.setText("Empréstimos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotaoRemoverFuncionario)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(TextoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addGap(146, 146, 146)
+                .addComponent(jLabel1)
+                .addContainerGap(185, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TxtEmprestimos)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(BotaoEmprestimosVoltar)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BotaoRemoverFuncionario)
-                .addGap(39, 39, 39))
+                .addComponent(TxtEmprestimos, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BotaoEmprestimosVoltar))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TextoCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoCPFActionPerformed
+    private void BotaoEmprestimosVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoEmprestimosVoltarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextoCPFActionPerformed
-
-    private void BotaoRemoverFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoRemoverFuncionarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoRemoverFuncionarioActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_BotaoEmprestimosVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,27 +95,27 @@ public class TelaReserva extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaReserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaEmprestimos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaReserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaEmprestimos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaReserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaEmprestimos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaReserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaEmprestimos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaReserva().setVisible(true);
+                new TelaEmprestimos().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BotaoRemoverFuncionario;
-    private javax.swing.JTextField TextoCPF;
+    private javax.swing.JButton BotaoEmprestimosVoltar;
+    private javax.swing.JTextField TxtEmprestimos;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

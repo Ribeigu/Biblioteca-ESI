@@ -73,6 +73,26 @@ public class CatalogoLivros {
         return null;
     }
     
+    public Livro BuscarLivroTitulo(String titulo){
+        for(CatalogoExemplar e : livros){
+            if(e.getTitulo().toUpperCase().equals(titulo.toUpperCase())){
+                ArrayList<Livro> exemplares = e.getExemplares();
+                return exemplares.get(0);
+            }
+        }
+        return null;
+    }
+    
+    public Livro BuscarLivroISBN(String ISBN){
+        for(CatalogoExemplar e : livros){
+            if(e.getISBN().equals(ISBN)){
+                ArrayList<Livro> exemplares = e.getExemplares();
+                return exemplares.get(0);
+            }
+        }
+        return null;
+    }
+    
     public void ImprimirCatalogo(){
         for(CatalogoExemplar e : livros){
             e.ImprimirLivro();

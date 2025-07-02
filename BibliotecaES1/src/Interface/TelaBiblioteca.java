@@ -51,9 +51,19 @@ public class TelaBiblioteca extends javax.swing.JFrame {
         MenuBiblioteca.add(AbaLoginBiblioteca);
 
         AbaCatálogoBiblioteca.setText("Catálogo");
+        AbaCatálogoBiblioteca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbaCatálogoBibliotecaActionPerformed(evt);
+            }
+        });
         MenuBiblioteca.add(AbaCatálogoBiblioteca);
 
         AbaBuscaBiblioteca.setText("Buscar livro");
+        AbaBuscaBiblioteca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbaBuscaBibliotecaActionPerformed(evt);
+            }
+        });
         MenuBiblioteca.add(AbaBuscaBiblioteca);
 
         setJMenuBar(MenuBiblioteca);
@@ -83,6 +93,16 @@ public class TelaBiblioteca extends javax.swing.JFrame {
         new TelaLogin().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_AbaLoginBibliotecaActionPerformed
+
+    private void AbaCatálogoBibliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbaCatálogoBibliotecaActionPerformed
+        // TODO add your handling code here:
+        new TelaCatalogo().setVisible(true);
+    }//GEN-LAST:event_AbaCatálogoBibliotecaActionPerformed
+
+    private void AbaBuscaBibliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbaBuscaBibliotecaActionPerformed
+        // TODO add your handling code here:
+        new TelaBusca().setVisible(true);
+    }//GEN-LAST:event_AbaBuscaBibliotecaActionPerformed
 
     /**
      * @param args the command line arguments

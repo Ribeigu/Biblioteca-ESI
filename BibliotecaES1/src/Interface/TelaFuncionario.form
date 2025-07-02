@@ -4,30 +4,37 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="MenuFuncionario">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="AbaContaFuncionario">
+        <Menu class="javax.swing.JMenu" name="AbaLivroFuncionario">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Conta"/>
+            <Property name="text" type="java.lang.String" value="Registrar Livro"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AbaLivroFuncionarioActionPerformed"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="AbaEmprestimoFuncionario">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fazer empr&#xe9;stimo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AbaEmprestimoFuncionarioActionPerformed"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="AbaDevolucaoFuncionario">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Fazer Devolu&#xe7;&#xe3;o"/>
+            <Property name="text" type="java.lang.String" value="Fazer devolu&#xe7;&#xe3;o"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AbaDevolucaoFuncionarioActionPerformed"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="AbaPagarMultaFuncionario">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fazer pagamento de multa"/>
           </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="AbaSair">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Sair"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AbaPagarMultaFuncionarioActionPerformed"/>
+          </Events>
         </Menu>
       </SubComponents>
     </Menu>

@@ -38,6 +38,7 @@ public class TelaLoginGerente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Loggar como gerente");
+        setResizable(false);
 
         jLabel1.setText("Email");
 

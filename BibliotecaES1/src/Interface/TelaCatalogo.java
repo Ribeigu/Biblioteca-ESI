@@ -4,6 +4,9 @@
  */
 package Interface;
 
+import Aplicacao.ControladorBiblioteca;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Júlia
@@ -11,7 +14,7 @@ package Interface;
 public class TelaCatalogo extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaCatalogo
+     * Creates new form Telacatalogo
      */
     public TelaCatalogo() {
         initComponents();
@@ -26,72 +29,78 @@ public class TelaCatalogo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TipoBusca = new javax.swing.JComboBox<>();
-        busca = new javax.swing.JTextField();
-        buscarBotao = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextField1 = new javax.swing.JTextField();
+        PainelCatalogo = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        TxtCatalogo = new javax.swing.JTextField();
+        BotaoCatalogoVoltar = new javax.swing.JButton();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-        TipoBusca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Busca ISBN", "Busca Título", "Busca Autor", "Busca Gênero" }));
-        TipoBusca.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setText("Catálogo");
+
+        BotaoCatalogoVoltar.setText("Voltar");
+        BotaoCatalogoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TipoBuscaActionPerformed(evt);
+                BotaoCatalogoVoltarActionPerformed(evt);
             }
         });
 
-        busca.setText("Digite aqui...");
-
-        buscarBotao.setText("Buscar");
-        buscarBotao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarBotaoActionPerformed(evt);
-            }
-        });
-
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        javax.swing.GroupLayout PainelCatalogoLayout = new javax.swing.GroupLayout(PainelCatalogo);
+        PainelCatalogo.setLayout(PainelCatalogoLayout);
+        PainelCatalogoLayout.setHorizontalGroup(
+            PainelCatalogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelCatalogoLayout.createSequentialGroup()
+                .addGap(146, 146, 146)
+                .addComponent(jLabel1)
+                .addContainerGap(176, Short.MAX_VALUE))
+            .addGroup(PainelCatalogoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PainelCatalogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TxtCatalogo)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelCatalogoLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(BotaoCatalogoVoltar)))
+                .addContainerGap())
+        );
+        PainelCatalogoLayout.setVerticalGroup(
+            PainelCatalogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelCatalogoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TxtCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addComponent(BotaoCatalogoVoltar))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(TipoBusca, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(busca, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(buscarBotao))))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(PainelCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(TipoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(busca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buscarBotao))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addComponent(PainelCatalogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TipoBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoBuscaActionPerformed
+    private void BotaoCatalogoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCatalogoVoltarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TipoBuscaActionPerformed
-
-    private void buscarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBotaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buscarBotaoActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_BotaoCatalogoVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,19 +128,23 @@ public class TelaCatalogo extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaCatalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaCatalogo().setVisible(true);
+                ControladorBiblioteca biblioteca = new ControladorBiblioteca();
+                //finalizar essa aqui
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> TipoBusca;
-    private javax.swing.JTextField busca;
-    private javax.swing.JButton buscarBotao;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton BotaoCatalogoVoltar;
+    private javax.swing.JPanel PainelCatalogo;
+    private javax.swing.JTextField TxtCatalogo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -24,11 +24,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cat&#xe1;logo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AbaCat&#xe1;logoBibliotecaActionPerformed"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="AbaBuscaBiblioteca">
           <Properties>
             <Property name="text" type="java.lang.String" value="Buscar livro"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AbaBuscaBibliotecaActionPerformed"/>
+          </Events>
         </Menu>
       </SubComponents>
     </Menu>
