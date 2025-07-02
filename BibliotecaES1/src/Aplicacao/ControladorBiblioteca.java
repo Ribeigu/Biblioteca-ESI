@@ -107,10 +107,6 @@ public class ControladorBiblioteca {
     }
     
     public boolean FazerEmprestimoLivro(String CPF, String ISBN, String tombo){
-        if (CPF==this.cpf){
-            System.out.println("Você não pode realizar empréstimos para si mesmo!!");
-            return false;
-        }
         Reserva reserva = catalogoReserva.VerificarExistenciaReserva(ISBN, CPF);
         
         if(reserva == null){
