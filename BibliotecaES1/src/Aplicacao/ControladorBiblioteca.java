@@ -211,4 +211,8 @@ public class ControladorBiblioteca {
     public boolean VerificarSeEGerente(String email){
         return catalogoFuncionario.VerificarSeEGerente(email);
     }
+    
+    public void ImprimirCatalogoLivros(){
+        catalogoLivros.ImprimirCatalogo();
+    } 
 }
