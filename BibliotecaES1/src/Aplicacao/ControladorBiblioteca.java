@@ -18,9 +18,11 @@ public class ControladorBiblioteca {
     private CatalogoFuncionario catalogoFuncionario;
     private CatalogoEmprestimo catalogoEmprestimo;
     private CatalogoReserva catalogoReserva;
+    private static ControladorBiblioteca instancia;
     
-    public ControladorBiblioteca(){
-        
+    public static ControladorBiblioteca getInstancia(){
+        if(instancia==null) instancia = new ControladorBiblioteca();
+        return instancia;
     }
     
     public void FazerRegistroLivro(String titulo, ArrayList<String> autores, int edicao, String ISBN, ArrayList<EnumGeneros> generos){
